@@ -43,7 +43,7 @@ RUN set -eux; \
     python -m pip install --upgrade pip; \
     python -m pip install wheel; \
     python -m pip install -r requirements.txt; \
-    chmod +x docker/entrypoint.sh; \
+    chmod +x entrypoint.sh; \
     #  create taiga group and user to use it and give permissions over the code (in entrypoint)
     groupadd --system taiga --gid=999; \
     useradd --system --no-create-home --gid taiga --uid=999 --shell=/bin/bash taiga; \
@@ -66,4 +66,4 @@ RUN set -eux; \
     find . -name '*pyc' -exec rm -r '{}' +
 
 EXPOSE 8003
-ENTRYPOINT ["./docker/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
