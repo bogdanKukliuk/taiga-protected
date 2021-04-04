@@ -13,8 +13,8 @@ RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Get the code
-COPY . /taiga-protected
-WORKDIR /taiga-protected
+COPY . taiga-protected
+WORKDIR taiga-protected
 
 # grab gosu for easy step-down from root
 # https://github.com/tianon/gosu/blob/master/INSTALL.md
